@@ -90,10 +90,10 @@ To add another page, follow these simple steps:
 
 - Create the file
 - Make a new file inside the public folder called menu.html. Add some basic content like:
-
+```html
 <h1>Our Menu</h1>
 <p>Check out our coffee options!</p>
-
+```
 Add a new route to your server
 
 Open server.js and add this:
