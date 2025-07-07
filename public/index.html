@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Grind - Premium Coffee Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee-dark': '#2D1B14',
+                        'coffee-medium': '#6B4423',
+                        'coffee-light': '#D2B48C',
+                        'cream': '#F5F5DC',
+                        'warm-white': '#FDF6E3'
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-warm-white text-coffee-dark font-sans">
+    <!-- Navigation -->
+    <nav class="bg-coffee-dark text-cream shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-serif font-bold">The Daily Grind</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-coffee-light transition-colors duration-300 px-3 py-2">Home</a>
+                        <a href="#menu" class="hover:text-coffee-light transition-colors duration-300 px-3 py-2">Menu</a>
+                        <a href="#about" class="hover:text-coffee-light transition-colors duration-300 px-3 py-2">About</a>
+                        <a href="contact.html" class="hover:text-coffee-light transition-colors duration-300 px-3 py-2">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-cream hover:text-coffee-light">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center"
+        style="background-image: url('images/hero-coffee.jpg')">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-6xl md:text-8xl font-serif font-bold mb-6">The Daily Grind</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Where every cup tells a story and every sip creates
+                memories</p>
+            <div class="space-x-4">
+                <a href="#menu"
+                    class="bg-coffee-light hover:bg-cream text-coffee-dark font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 inline-block">
+                    Explore Menu
+                </a>
+                <a href="contact.html"
+                    class="border-2 border-cream text-cream hover:bg-cream hover:text-coffee-dark font-semibold py-4 px-8 rounded-full transition-all duration-300 inline-block">
+                    Visit Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-coffee-dark mb-6">Our Story</h2>
+                <p class="text-lg text-coffee-medium max-w-3xl mx-auto">
+                    Founded in 2015, Cozy Corner has been serving the finest artisanal coffee to our beloved community. 
+                    We source our beans directly from farmers, ensuring fair trade and exceptional quality in every cup.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-coffee-medium rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-cream" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-coffee-dark mb-2">Premium Quality</h3>
+                    <p class="text-coffee-medium">Hand-selected beans from the world's finest coffee regions</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-coffee-medium rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-cream" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-coffee-dark mb-2">Expert Craftsmanship</h3>
+                    <p class="text-coffee-medium">Our skilled baristas perfect every cup with passion and precision</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-coffee-medium rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-cream" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-coffee-dark mb-2">Cozy Atmosphere</h3>
+                    <p class="text-coffee-medium">A warm, welcoming space perfect for work, study, or relaxation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-warm-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-coffee-dark mb-6">Our Menu</h2>
+                <p class="text-lg text-coffee-medium max-w-2xl mx-auto">
+                    Discover our carefully curated selection of coffee, pastries, and light meals
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-cream rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('images/espresso.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-coffee-dark mb-2">Signature Espresso</h3>
+                        <p class="text-coffee-medium mb-4">Rich, bold espresso with notes of chocolate and caramel</p>
+                        <span class="text-2xl font-bold text-coffee-dark">$4.50</span>
+                    </div>
+                </div>
+                <div class="bg-cream rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('images/cappuccino.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-coffee-dark mb-2">Creamy Cappuccino</h3>
+                        <p class="text-coffee-medium mb-4">Perfect balance of espresso, steamed milk, and foam</p>
+                        <span class="text-2xl font-bold text-coffee-dark">$5.25</span>
+                    </div>
+                </div>
+                <div class="bg-cream rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('images/latte.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-coffee-dark mb-2">Artisan Latte</h3>
+                        <p class="text-coffee-medium mb-4">Smooth espresso with velvety steamed milk and latte art</p>
+                        <span class="text-2xl font-bold text-coffee-dark">$5.75</span>
+                    </div>
+                </div>
+                <div class="bg-cream rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('images/croissant.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-coffee-dark mb-2">Fresh Croissant</h3>
+                        <p class="text-coffee-medium mb-4">Buttery, flaky pastry baked fresh daily</p>
+                        <span class="text-2xl font-bold text-coffee-dark">$3.50</span>
+                    </div>
+                </div>
+                <div class="bg-cream rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('images/avocado-toast.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-coffee-dark mb-2">Avocado Toast</h3>
+                        <p class="text-coffee-medium mb-4">Multigrain bread topped with fresh avocado and herbs</p>
+                        <span class="text-2xl font-bold text-coffee-dark">$7.95</span>
+                    </div>
+                </div>
+                <div class="bg-cream rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="h-48 bg-cover bg-center" style="background-image: url('images/muffin.jpg')"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-coffee-dark mb-2">Blueberry Muffin</h3>
+                        <p class="text-coffee-medium mb-4">Moist muffin bursting with fresh blueberries</p>
+                        <span class="text-2xl font-bold text-coffee-dark">$4.25</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-coffee-dark text-cream py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-4">The Daily Grind</h3>
+                    <p class="text-coffee-light">Your neighborhood coffee shop where quality meets comfort.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-coffee-light hover:text-cream transition-colors">Home</a></li>
+                        <li><a href="#menu" class="text-coffee-light hover:text-cream transition-colors">Menu</a></li>
+                        <li><a href="#about" class="text-coffee-light hover:text-cream transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-coffee-light hover:text-cream transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Hours</h4>
+                    <ul class="space-y-2 text-coffee-light">
+                        <li>Mon-Fri: 6:00 AM - 8:00 PM</li>
+                        <li>Saturday: 7:00 AM - 9:00 PM</li>
+                        <li>Sunday: 8:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-coffee-light">
+                        <li>123 Coffee Street</li>
+                        <li>City, State 12345</li>
+                        <li>(555) 123-4567</li>
+                        <li>info@thedailygrind.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-coffee-medium mt-8 pt-8 text-center text-coffee-light">
+                <p>&copy; 2025 The Daily Grind. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
