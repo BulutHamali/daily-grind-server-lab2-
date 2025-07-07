@@ -63,5 +63,47 @@ daily-grind-server/
 ## License
 This project is developed for educational and demonstration purposes only.
 
+## Reflection Questions and Answers
 
+1. What is the difference between res.send() and res.sendFile()?
+
+
+- res.send() is used to send simple text or data back to the browser. For example, you might use it to send a short message like "Hello!" or a list of names.
+
+- res.sendFile() is used to send an entire file, like an HTML page, to the browser. You use it when you want to show a full web page instead of just a message.
+
+When to use them:
+
+- Use res.send() if you're just sending text or data.
+
+- Use res.sendFile() when you want to send a full webpage (like index.html or contact.html).
+
+2. Why do we need the path module when sending files?
+
+- The path module helps create the correct file paths so the server knows where to find the files on your computer.
+
+- If you just use 'public/index.html', it might work on your computer but break on someone else's — because the location might not be the same. Using path.join(__dirname, 'public', 'index.html') makes sure it always finds the right file no matter where the project is run.
+
+3. How do you add a third page like a menu page?
+
+To add another page, follow these simple steps:
+
+- Create the file
+- Make a new file inside the public folder called menu.html. Add some basic content like:
+
+<h1>Our Menu</h1>
+<p>Check out our coffee options!</p>
+
+Add a new route to your server
+
+Open server.js and add this:
+
+```bash
+app.get('/menu', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'menu.html'))
+})
+```
+Run your server and test it
+
+Visit http://localhost:3000/menu in your browser to see the new page.
 
