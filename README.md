@@ -21,7 +21,7 @@ npm install
 npm run dev
 
 ## Project Structure
-```
+```bash
 daily-grind-server/
 ├── public/
 │   ├── images/
