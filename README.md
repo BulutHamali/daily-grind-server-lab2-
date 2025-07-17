@@ -1,9 +1,24 @@
-# The Daily Grind - Web Server
+# Daily Grind Server Lab 2
 
-
+This project adds a new feature to the existing Express server for "The Daily Grind" coffee shop. The goal is to display a "Fun Fact of the Day" on a digital screen in the shop by fetching data from an external API and serving it to clients through a new route.
 
 ## Project Overview
-Thisitis a basic web server developed for The Daily Grind, a local coffee shop. The purpose of this project is to serve a homepage and a contact page using Node.js and Express.js. It demonstrates essential backend skills such as setting up a server, managing routing, and serving static files.
+
+- Built with Node.js and Express
+- Communicates with an external public API (Useless Facts API)
+- Returns a simple JSON response with a random fun fact
+- Uses axios for external API requests
+- Includes basic error handling
+
+## How to Run This Project
+
+1. Clone or download the repository.
+2. Open a terminal and navigate into the project folder.
+3. Run the following commands:
+
+```bash
+npm install
+npm run dev
 
 ## Project Structure
 ```
@@ -40,7 +55,7 @@ daily-grind-server/
    ```
 3. Run the server:
    ```bash
-   node server.js
+   npm  rund dev
    ```
    The server will be available at [http://localhost:3000](http://localhost:3000).
 
@@ -56,54 +71,28 @@ daily-grind-server/
 - Serve static HTML files using middleware.
 - Implement routing to handle different URL paths.
 
-## Project Links
-- [GitHub Code](https://github.com/BulutHamali/The-Daily-Grind)
-- [Live Demo](https://the-daily-grind-lnpd.onrender.com/#menu)
+Reflection Questions and Answers
+1. Why was it important to re-format the data from the Useless Facts API before sending it to your own client? What are the benefits of an API providing a clean, minimal response?
+Re-formatting the data helps to simplify what the client receives. By only sending the necessary information (in this case, just the fun fact text), we reduce the amount of data transferred, make the client-side code easier to write, and avoid exposing unnecessary internal details from the third-party API. A clean and minimal response helps make our API more predictable and user-friendly.
 
-## License
-This project is developed for educational and demonstration purposes only.
+2. In the catch block, why is it better to send a generic error message to the client instead of the actual error object from axios?
+Sending a generic error message protects the internal details of our server and avoids exposing potentially sensitive or confusing information to the client. It also keeps the API consistent and clean. The detailed error logs can still be printed in the server console for debugging by the developer.
 
-## Reflection Questions and Answers
+3. How might you modify this application to get a fact in a different language if the external API supported it (e.g., with a query parameter like ?language=de)?
+If the external API supports query parameters for language, we could modify the axios request URL like this:
 
-1. What is the difference between res.send() and res.sendFile()?
-
-
-- res.send() is used to send simple text or data back to the browser. For example, you might use it to send a short message like "Hello!" or a list of names.
-
-- res.sendFile() is used to send an entire file, like an HTML page, to the browser. You use it when you want to show a full web page instead of just a message.
-
-When to use them:
-
-- Use res.send() if you're just sending text or data.
-
-- Use res.sendFile() when you want to send a full webpage (like index.html or contact.html).
-
-2. Why do we need the path module when sending files?
-
-- The path module helps create the correct file paths so the server knows where to find the files on your computer.
-
-- If you just use 'public/index.html', it might work on your computer but break on someone else's — because the location might not be the same. Using path.join(__dirname, 'public', 'index.html') makes sure it always finds the right file no matter where the project is run.
-
-3. How do you add a third page like a menu page?
-
-To add another page, follow these simple steps:
-
-- Create the file
-- Make a new file inside the public folder called menu.html. Add some basic content like:
-```html
-<h1>Our Menu</h1>
-<p>Check out our coffee options!</p>
+```js
+https://uselessfacts.jsph.pl/api/v2/facts/random?language=de
 ```
-Add a new route to your server
+We could even allow clients to pass a language code via query string, for example:
 
-Open server.js and add this:
 
-```bash
-app.get('/menu', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'menu.html'))
-})
+```js
+app.get('/api/fun-fact', async (req, res) => {
+  const lang = req.query.lang || 'en';
+  const url = `https://uselessfacts.jsph.pl/api/v2/facts/random?language=${lang}`;
+  ...
+});
 ```
-Run your server and test it
 
-Visit http://localhost:3000/menu in your browser to see the new page.
-
+This makes the application more flexible and user-friendly by allowing facts in different languages.
